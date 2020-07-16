@@ -1,0 +1,43 @@
+spring:
+  application:
+    # 服务名称以-server结尾
+    name: spring-boot-demo-server
+  cloud:
+    nacos:
+      config:
+        # 配置所在的nacos地址
+        server-addr: 127.0.0.1:8848
+        enabled: true
+        # 所属分组，注意：同命名空间不同分组下的服务不可通过互相调用，group也是隔离的
+        # 若想互相调用，可不指定group，会将服务注册到默认分组中
+        group: JPOLICY-SYNC-SERVERR
+        # 配置文件后缀
+        file-extension: yml
+        # 配置文件所在命名空间
+        namespace: be098f84-4758-43b5-b574-f64c87dd60b5
+      discovery:
+        # 服务注册到的地址
+        server-addr: 127.0.0.1:8848
+        # 服务注册到的命名空间
+        namespace: be098f84-4758-43b5-b574-f64c87dd60b5
+        register-enabled: true
+
+dubbo:
+  application:
+    name: ${spring.application.name}
+    logger: slf4j
+  registry:
+    # dubbo注册地址
+    address: nacos://127.0.0.1:8848
+    parameters:
+      # dubbo注册到的命名空间
+      namespace: be098f84-4758-43b5-b574-f64c87dd60b5
+  provider:
+    # 服务提供者过滤器
+#    filter: providerTraceFilter
+    retries: 0
+  consumer:
+    # 服务消费者过滤器
+#    filter: consumerTraceFilter
+    # 超时时间
+    timeout: 60000

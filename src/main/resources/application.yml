@@ -1,0 +1,37 @@
+server:
+  port: 8080
+dubbo:
+  scan:
+    # dubbo 服务扫描基础包路径
+    base-packages: com.personal.demo
+  # dubbo所采用的协议配置
+  protocol:
+    id: dubbo
+    # Dubbo 服务暴露的协议配置,name 为协议名称
+    name: dubbo
+    # port 为协议端口（ -1 表示自增端口，从 20880 开始）
+    port: -1
+  # 用于服务消费方订阅服务提供方的应用名称的列表，若需订阅多应用，使用 "," 分割。 不推荐使用默认值为 "*"，它将订阅所有应用。
+  # 这里默认使用了当前应用名，请根据需要增加对应的应用名
+  cloud:
+    subscribed-services: springBootDemo
+
+# Spring数据源配置
+spring:
+  # 数据源配置
+  datasource:
+    # 启动类名称
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 连接路径
+    url: jdbc:mysql://127.0.0.1:3306/demo?serverTimezone=GMT%2B8&setUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+  # Jpa相关配置
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl.auto: update
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    # 是否展示sql
+    show-sql: true
+
