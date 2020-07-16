@@ -1,9 +1,8 @@
-package com.personal.demo.dubbo.demo.rpc.api.impl;
+package com.personal.demo.rpc.impl;
 
+import com.personal.demo.User;
+import com.personal.demo.UserService;
 import org.apache.dubbo.config.annotation.Service;
-
-import com.personal.demo.dubbo.demo.rpc.api.User;
-import com.personal.demo.dubbo.demo.rpc.api.UserService;
 
 import java.util.Collection;
 import java.util.HashMap;

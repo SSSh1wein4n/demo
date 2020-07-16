@@ -14,38 +14,13 @@
  * limitations under the License.
  */
 
-package com.personal.demo.dubbo.demo.rpc.api;
-
-import java.util.Collection;
+package com.personal.demo;
 
 /**
- * {@link User} Service.
- *
- * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
+ * Echo Service.
  */
-public interface UserService {
+public interface EchoService {
 
-	/**
-	 * 用户保存
-	 *
-	 * @param user 用户实体
-	 * @return 是否成功
-	 */
-	boolean save(User user);
-
-	/**
-	 * 通过用户id删除用户
-	 *
-	 * @param userId 用户id
-	 * @return 是否成功
-	 */
-	boolean remove(Long userId);
-
-	/**
-	 * 查询全部用户
-	 *
-	 * @return 用户实体集合
-	 */
-	Collection<User> findAll();
+	String echo(String message);
 
 }

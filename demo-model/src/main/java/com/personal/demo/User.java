@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.personal.demo.dubbo.demo.rpc.api;
+package com.personal.demo;
 
 import java.io.Serializable;
 
