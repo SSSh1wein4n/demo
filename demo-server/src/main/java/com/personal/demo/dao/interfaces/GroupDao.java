@@ -1,4 +1,4 @@
-package com.personal.demo.dao;
+package com.personal.demo.dao.interfaces;
 
 import com.personal.demo.GroupEntity;
 

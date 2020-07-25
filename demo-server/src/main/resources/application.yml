@@ -1,4 +1,7 @@
 server:
+  servlet:
+    # 项目接口的上下文路径，接口前要加项目名，建议与name一致，便于区分
+    context-path: /spring-boot-demo-server
   port: 8080
 dubbo:
   scan:

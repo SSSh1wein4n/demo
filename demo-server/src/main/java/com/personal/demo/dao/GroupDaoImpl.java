@@ -1,6 +1,7 @@
 package com.personal.demo.dao;
 
 import com.personal.demo.GroupEntity;
+import com.personal.demo.dao.interfaces.GroupDao;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
