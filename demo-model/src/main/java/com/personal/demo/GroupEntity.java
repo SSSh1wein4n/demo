@@ -3,16 +3,14 @@ package com.personal.demo;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @author shiweinan
  * @date 2020-07-16 17:59
  */
 @Entity(name = "group_entity")
-public class GroupEntity implements Serializable {
-
-    private static final long serialVersionUID = -6449413893518917710L;
+public class GroupEntity extends BaseEntity {
 
     @Id
     @Column
@@ -23,6 +21,12 @@ public class GroupEntity implements Serializable {
 
     @Column
     private String address;
+
+    @Column
+    private Integer level;
+
+    @Column
+    private Date createTime;
 
     public Long getId() {
         return id;
@@ -46,5 +50,21 @@ public class GroupEntity implements Serializable {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }
