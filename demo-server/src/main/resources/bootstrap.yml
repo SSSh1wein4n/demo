@@ -22,6 +22,7 @@ spring:
         namespace: be098f84-4758-43b5-b574-f64c87dd60b5
         register-enabled: true
 
+
 dubbo:
   application:
     name: ${spring.application.name}
